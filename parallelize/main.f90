@@ -18,8 +18,8 @@ PROGRAM parallelize
     ENDDO
     !$omp end parallel do
 
-    PRINT *, "C(1,1) = ", C(1,1)
-    PRINT *, "C(2,2) = ", C(2,2)
-    PRINT *, "C(N,N) = ", C(N,N)
+    write (*, *) "C(1,1) = ", C(1,1)
+    write (*, *) "C(2,2) = ", C(2,2)
+    write (*, *) "C(N,N) = ", C(N,N)
 
 END PROGRAM parallelize
