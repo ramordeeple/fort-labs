@@ -8,3 +8,7 @@ add_executable(parallelize
         main.f90)
 
 target_link_libraries(parallelize PRIVATE OpenMP::OpenMP_Fortran)
+target_compile_options(parallelize PRIVATE
+        -flto
+        -ftree-parallelize-loops=10
+)
