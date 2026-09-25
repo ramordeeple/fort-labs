@@ -15,7 +15,7 @@ program main
     t2 = omp_get_wtime()
 
     write (*, *) "DO"
-    write (*, *) "PI   =", pi
+    write (*, *) "PI = ", pi
     write (*, '(A, F10.5)') "TIME = ", t2 - t1
     write (*, *)
 
