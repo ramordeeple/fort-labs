@@ -11,7 +11,7 @@ module module
     doubleprecision :: part(NPARTS)
 
     contains
-        pure double precision function series(i)
+        double precision function series(i)
 
         integer, intent(in) :: i
         integer :: k, first, last
@@ -19,7 +19,7 @@ module module
         first = (i - 1) * (NMAX / NPARTS)
         last  = i * (NMAX / NPARTS) - 1
 
-        series = 0.0
+        series = 0
 
         do k = first, last
             series = series + (-1)**k / dble(2*k + 1)

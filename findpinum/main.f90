@@ -8,7 +8,7 @@ program main
     t1 = omp_get_wtime()
 
     do k = 0, NMAX - 1
-        s = s + (-1.0)**k / (2*k + 1)
+        s = s + (-1.)**k / (2*k + 1)
     end do
 
     pi = 4 * s
@@ -45,7 +45,7 @@ program main
 
     !$omp parallel do reduction(+:s)
     do k = 0, NMAX - 1
-        s = s + (-1.0)**k / (2*k + 1)
+        s = s + (-1.)**k / (2*k + 1)
     end do
     !$omp end parallel do
 
@@ -68,7 +68,7 @@ program main
 
     !$omp do
     do k = 0, NMAX - 1
-        local_s = local_s + (-1.0)**k / (2*k + 1)
+        local_s = local_s + (-1.)**k / (2*k + 1)
     end do
     !$omp end do
 
