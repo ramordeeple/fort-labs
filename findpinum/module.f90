@@ -11,7 +11,7 @@ module module
     doubleprecision :: part(NPARTS)
 
     contains
-        double precision function series(i)
+        pure double precision function series(i)
 
         integer, intent(in) :: i
         integer :: k, first, last
