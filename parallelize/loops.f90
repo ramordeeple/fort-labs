@@ -16,7 +16,7 @@ CONTAINS
         !            ENDDO
         !        ENDDO
 
-        !omp parallel
+        !$omp parallel
 
         !$OMP WORKSHARE
         A = 1.0
