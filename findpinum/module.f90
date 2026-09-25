@@ -8,10 +8,10 @@ module module
 
     real(precision) :: pi, s
     real(precision) :: t1, t2
-    doubleprecision :: part(NPARTS)
+    real(precision) :: part(NPARTS)
 
     contains
-        pure double precision function series(i)
+        pure real(precision) function series(i)
 
         integer, intent(in) :: i
         integer :: k, first, last
