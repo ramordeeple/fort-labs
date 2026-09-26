@@ -7,7 +7,6 @@ PROGRAM parallelize
     REAL(KIND=KR), PARAMETER  :: K = 3.1415
     REAL                      :: TM(2)
 
-
     CALL DATA_INIT(IOUT)
 
     !$omp parallel do private(I, J)
