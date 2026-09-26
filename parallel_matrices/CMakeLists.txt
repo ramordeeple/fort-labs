@@ -5,7 +5,7 @@ project(parallel_matrices Fortran)
 find_package(OpenMP REQUIRED COMPONENTS Fortran)
 
 add_executable(${PROJECT_NAME}
-        loops.f90
+        matrix_module.f90
         main.f90)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE OpenMP::OpenMP_Fortran)
