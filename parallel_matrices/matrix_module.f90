@@ -14,15 +14,15 @@ contains
         !$omp parallel
 
         !$omp workshare
-        A = 1.0
+        A = 1.
         !$omp end workshare
 
         !$omp workshare
-        B = 2.0
+        B = 2.
         !$omp end workshare
 
         !$omp workshare
-        C = 0.0
+        C = 0.
         !$omp end workshare
 
         !$omp end parallel
