@@ -3,13 +3,13 @@ program parallel_matrices
     use omp_lib
 
     real(precision) :: temp(N)
-
+    real(precision) :: s
 
     call init_matrices()
 
-    write (*, '(A, F10.5)') "A = ", A(1,1)
-    write (*, '(A, F10.5)') "B = ", B(1,1)
-    write (*, '(A, F10.5)') "C = ", C(1,1)
+    write (*, '(A, F10.3)') "A = ", A(1,1)
+    write (*, '(A, F10.3)') "B = ", B(1,1)
+    write (*, '(A, F10.3)') "C = ", C(1,1)
 
     t1 = omp_get_wtime()
 
@@ -24,7 +24,7 @@ program parallel_matrices
     t2 = omp_get_wtime()
 
     write (*, *) "DO"
-    write (*, '(A, F10.5)') "C(1,1) = ", C(1,1)
+    write (*, '(A, F10.3)') "C(1,1) = ", C(1,1)
     write (*, '(A, F10.5)') "TIME = ", t2 - t1
 
     ! ===================== !
@@ -43,7 +43,7 @@ program parallel_matrices
     t2 = omp_get_wtime()
 
     write (*, *) "DO CONCURRENT внешний"
-    write (*, '(A, F10.5)') "C(1,1) = ", C(1,1)
+    write (*, '(A, F10.3)') "C(1,1) = ", C(1,1)
     write (*, '(A, F10.5)') "TIME = ", t2 - t1
 
     ! ===================== !
@@ -64,7 +64,7 @@ program parallel_matrices
     t2 = omp_get_wtime()
 
     write (*, *) "DO CONCURRENT средний"
-    write (*, '(A, F10.5)') "C(1,1) = ", C(1,1)
+    write (*, '(A, F10.3)') "C(1,1) = ", C(1,1)
     write (*, '(A, F10.5)') "TIME = ", t2 - t1
     write (*, *)
 
@@ -88,8 +88,11 @@ program parallel_matrices
     t2 = omp_get_wtime()
 
     write (*, *) "DO CONCURRENT внутренний"
-    write (*, '(A, F10.5)') "C(1,1) = ", C(1,1)
+    write (*, '(A, F10.3)') "C(1,1) = ", C(1,1)
     write (*, '(A, F10.5)') "TIME = ", t2 - t1
     write (*, *)
+
+
+
 
 end program
