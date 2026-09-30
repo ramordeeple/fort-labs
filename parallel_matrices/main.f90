@@ -35,11 +35,9 @@ program parallel_matrices
     C = 0.0
     t1 = omp_get_wtime()
 
-    do concurrent (i = 1:N)
-        do j = 1, N
-            do k = 1, N
-                C(i,j) = C(i,j) + A(i,k) * B(k,j)
-            end do
+    do concurrent (i = 1:N, j = 1:N)
+        do k = 1, N
+            C(i,j) = C(i,j) + A(i,k) * B(k,j)
         end do
     end do
 
