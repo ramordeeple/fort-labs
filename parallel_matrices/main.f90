@@ -1,9 +1,10 @@
 program parallel_matrices
-    use matrix_module
     use omp_lib
+    use matrix_module
 
     real(precision) :: temp(N)
     real(precision) :: s
+    double precision :: t1, t2
 
     call init_matrices()
 
